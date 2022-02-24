@@ -6,3 +6,4 @@ Il s’agit d’une méthode de gestion des stocks dont l’objet est de faire s
 C’est méthode très utilisée par les entreprises qui sont dans l’alimentaire, et qui ont des produits avec des dates limite de consommation. 
 Cela permet non seulement de consommer les produits périssables avant échéance, mais surtout de réduire les coûts de stockage. 
 En gérant bien le stock FIFO, les produits qui seront en stock correspondront aux achats les plus récents.
+

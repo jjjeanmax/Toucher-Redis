@@ -4,6 +4,7 @@ from redis_queue import RedisQueue, worker
 from redis import Redis
 
 
+
 broker = Redis(host="localhost", db=0)
 result_backend = Redis(host="localhost", db=1)
 redis_queue = RedisQueue(broker, result_backend, "default")
