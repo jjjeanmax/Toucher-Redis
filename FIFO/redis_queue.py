@@ -37,7 +37,7 @@ class RedisQueue:
         return task.id
 
     def enexcecution(self):
-        # obtenir le Task de Redis
+        # Obtenir le Task de Redis (premier venue premier sorti -->lpop)
         serializer_task = self.broker.lpop(self.nom_queue)
         try:
             task = pickle.loads(serializer_task)
