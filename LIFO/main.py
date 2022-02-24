@@ -1,13 +1,12 @@
 import random
 
-from redis_queue import RedisQueue, worker
+from lifo_queue import Lifo, worker_lifo
 from redis import Redis
-
 
 
 broker = Redis(host="localhost", db=0)
 result_backend = Redis(host="localhost", db=1)
-redis_queue = RedisQueue(broker, result_backend, "default")
+redis_queue = Lifo(broker, result_backend, "default")
 
 
 def task(start: int, end: int):
@@ -19,4 +18,4 @@ def task(start: int, end: int):
 for start, end in zip(range(10), range(100, 1000, 100)):
     redis_queue.enattente(task, start, end)
 
-worker(redis_queue)
+worker_lifo(redis_queue)
